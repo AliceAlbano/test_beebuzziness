@@ -3,7 +3,7 @@ package lcd;
 
 public class SymbolString {
 
-	private Symbol[] symbolstring = new Symbol[10];
+	private Symbol[] symbolstring;
 	
 	public SymbolString(String symbolString) {
 		//initialise symbolstring a partir d'une chaine
