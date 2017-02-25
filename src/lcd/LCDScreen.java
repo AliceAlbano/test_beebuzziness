@@ -12,7 +12,7 @@ public class LCDScreen extends Screen {
 	}
 	
 	public void printLCDScreen() {
-		//appelle printGrid
+		//Call getGridXLine
 		
 	}
 }
