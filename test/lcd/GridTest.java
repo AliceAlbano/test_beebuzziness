@@ -18,6 +18,7 @@ public class GridTest {
 	private Grid grid7;
 	private Grid grid8;
 	private Grid grid9;
+	private Grid emptyGrid;
 
 	@Before
 	public void setUp() throws Exception {
@@ -31,6 +32,7 @@ public class GridTest {
 		grid7 = new Grid(Symbol.SEVEN);
 		grid8 = new Grid(Symbol.EIGHT);
 		grid9 = new Grid(Symbol.NINE);
+		emptyGrid = new Grid(Symbol.EMPTY);
 		
 	}
 
@@ -70,6 +72,9 @@ public class GridTest {
 		
 		line = grid9.getGridFirstLine();
 		assertArrayEquals(new Code[] {Code.SPACE, Code.UNDERSCORE, Code.SPACE}, line);
+		
+		line = emptyGrid.getGridFirstLine();
+		assertArrayEquals(new Code[] {Code.SPACE, Code.SPACE, Code.SPACE}, line);
 		 
 		
 	}
@@ -106,6 +111,9 @@ public class GridTest {
 		
 		line = grid9.getGridSecondLine();
 		assertArrayEquals(new Code[] {Code.PIPE, Code.UNDERSCORE, Code.PIPE}, line);
+		
+		line = emptyGrid.getGridSecondLine();
+		assertArrayEquals(new Code[] {Code.SPACE, Code.SPACE, Code.SPACE}, line);
 	}
 
 	@Test
@@ -140,6 +148,9 @@ public class GridTest {
 		
 		line = grid9.getGridThirdLine();
 		assertArrayEquals(new Code[] {Code.SPACE, Code.SPACE, Code.PIPE}, line);
+		
+		line = emptyGrid.getGridThirdLine();
+		assertArrayEquals(new Code[] {Code.SPACE, Code.SPACE, Code.SPACE}, line);
 	}
 
 }
