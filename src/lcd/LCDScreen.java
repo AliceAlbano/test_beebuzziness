@@ -9,10 +9,16 @@ public class LCDScreen extends Screen {
 	
 	public void setLCDScreen(Grid[] grid) {
 		//Remplit les grids de l'écran avec des symboles encodés
+		//Fill with empty grid for print
+	}
+	
+	public Grid[] getLCDScreen() {
+		return null;
 	}
 	
 	public void printLCDScreen() {
 		//Call getGridXLine
+		
 		
 	}
 }
