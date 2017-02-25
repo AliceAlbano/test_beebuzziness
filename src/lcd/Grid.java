@@ -69,6 +69,13 @@ public class Grid {
 								{Code.PIPE, Code.UNDERSCORE, Code.PIPE},
 								{Code.SPACE, Code.SPACE, Code.PIPE}};
 						break;
+						
+			case EMPTY:	this.grid = new Code[][] {
+								{Code.SPACE, Code.SPACE, Code.SPACE},
+								{Code.SPACE, Code.SPACE, Code.SPACE},
+								{Code.SPACE, Code.SPACE, Code.SPACE}};
+						break;
+			
 
 			default:	throw new IllegalArgumentException();
 	}
