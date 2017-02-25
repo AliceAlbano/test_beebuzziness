@@ -1,7 +1,7 @@
 package lcd;
 
 public enum Code {
-	ESPACE (" "),
+	SPACE (" "),
 	UNDERSCORE ("_"),
 	PIPE ("|");
 	
