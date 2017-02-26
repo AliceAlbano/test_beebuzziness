@@ -40,9 +40,50 @@ public class LCDScreen extends Screen {
 		return this.screen;
 	}
 	
+	// All the print methods here are not tested : as they are void-returning
+	// functions, unit testing is not possible unless we change the architecture
+	// of our class
+	// If we want to test this part, we need to do black-box testing : for instance
+	// a script who will call our main class with a parameter, reads its standard 
+	// output and compares it with the expected results
+	// For time reason, we do not make the script for now, as all other methods 
+	// have unit testing
+	private void printGridLineOnLCDScreen(Code[] gridLine) {
+		int i;
+		for (i = 0; i < gridLine.length; i ++) {
+			System.out.print(gridLine[i].getValue());
+		}
+		System.out.print(" ");
+	}
+	
+	private void printFirstLineOnLCDScreen() {
+		int i;
+		for (i = 0; i < this.screen.length; i++) {
+			printGridLineOnLCDScreen(screen[i].getGridFirstLine());
+		}
+		System.out.println();
+	}
+	
+	private void printSecondLineOnLCDScreen() {
+		int i;
+		for (i = 0; i < this.screen.length; i++) {
+			printGridLineOnLCDScreen(screen[i].getGridSecondLine());
+		}
+		System.out.println();
+	}
+	
+	private void printThirdLineOnLCDScreen() {
+		int i;
+		for (i = 0; i < this.screen.length; i++) {
+			printGridLineOnLCDScreen(screen[i].getGridThirdLine());
+		}
+		System.out.println();
+	}
+	
 	public void printLCDScreen() {
-		//Call getGridXLine
-		
+		printFirstLineOnLCDScreen();
+		printSecondLineOnLCDScreen();
+		printThirdLineOnLCDScreen();
 		
 	}
 }
