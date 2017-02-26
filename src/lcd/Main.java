@@ -7,11 +7,17 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		SymbolString symbolString = new SymbolString(args[0]);
-		
-		ControllerLCD controller = new ControllerLCD();
-		
-		controller.printSymbolString(symbolString);
+		try {
+			SymbolString symbolString = new SymbolString(args[0]);
+			
+			ControllerLCD controller = new ControllerLCD();
+			
+			controller.printSymbolString(symbolString);
+		}
+		catch (ArrayIndexOutOfBoundsException e) {
+			System.err.println("Usage : give a number as argument.");
+		}
+
 	}
 
 }
