@@ -7,7 +7,6 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		//SymbolString symbolString = new SymbolString("910");
 		SymbolString symbolString = new SymbolString(args[0]);
 		
 		ControllerLCD controller = new ControllerLCD();
