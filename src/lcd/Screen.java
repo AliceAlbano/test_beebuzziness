@@ -1,14 +1,11 @@
 package lcd;
 
 
-//Une classe écran générique, sans spécification de largeur
-//Il sera ainsi facile par la suite d'utilise de nouveaux écrans avec des caractéristiques différentes
+// A generic class screen, allowing to define specific screens extending this
+// class. In this way, we can easily use new screen with different width with
+// our existing code
 public abstract class Screen {
-
-	private int width;
 	
-	public int getWidth() {
-		return this.width;
-	}
+	public abstract int getWidth();
 	
 }

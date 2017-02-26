@@ -8,6 +8,10 @@ public class LCDScreen extends Screen {
 	private Grid[] screen = new Grid[width];
 	
 	
+	public int getWidth() {
+		return this.width;
+	}
+	
 // This method will be called by the ControllerLCD, which already 
 // checks if the length of the array grid is <= width
 // Therefore we do not handle this case in this method
@@ -43,11 +47,7 @@ public class LCDScreen extends Screen {
 	// All the print methods here are not tested : as they are void-returning
 	// functions, unit testing is not possible unless we change the architecture
 	// of our class
-	// If we want to test this part, we need to do black-box testing : for instance
-	// a script who will call our main class with a parameter, reads its standard 
-	// output and compares it with the expected results
-	// For time reason, we do not make the script for now, as all other methods 
-	// have unit testing
+	// If we want to test this part, we need to do black-box testing.
 	private void printGridLineOnLCDScreen(Code[] gridLine) {
 		int i;
 		for (i = 0; i < gridLine.length; i ++) {
