@@ -1,6 +1,6 @@
 package lcd;
 
-// We assume that our screen can print 10 numbers (width = 10)
+// We assume that our LCDscreen can print 10 numbers (width = 10)
 public class LCDScreen extends Screen {
 	
 	private int width = 10;
@@ -12,10 +12,7 @@ public class LCDScreen extends Screen {
 		return this.width;
 	}
 	
-// This method will be called by the ControllerLCD, which already 
-// checks if the length of the array grid is <= width
-// Therefore we do not handle this case in this method
-	public void setLCDScreen(Grid[] gridArray) {
+	public void setContent(Grid[] gridArray) {
 		int lengthGridArray = gridArray.length;
 		int i = 0;
 		
@@ -40,7 +37,7 @@ public class LCDScreen extends Screen {
 		}
 	}
 	
-	public Grid[] getLCDScreen() {
+	public Grid[] getContent() {
 		return this.screen;
 	}
 	
@@ -56,6 +53,9 @@ public class LCDScreen extends Screen {
 		System.out.print(" ");
 	}
 	
+	// Instead of defining a generic method printLine(i), we define three
+	// methods for the 3 lines. This way, we are certain that we cannot
+	// try to print a non existing line (like the fourth line for instance)
 	private void printFirstLineOnLCDScreen() {
 		int i;
 		for (i = 0; i < this.screen.length; i++) {
@@ -80,7 +80,7 @@ public class LCDScreen extends Screen {
 		System.out.println();
 	}
 	
-	public void printLCDScreen() {
+	public void printContent() {
 		printFirstLineOnLCDScreen();
 		printSecondLineOnLCDScreen();
 		printThirdLineOnLCDScreen();

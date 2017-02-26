@@ -8,4 +8,7 @@ public abstract class Screen {
 	
 	public abstract int getWidth();
 	
+	public abstract void setContent(Grid[] gridArray);
+	public abstract Grid[] getContent();
+	public abstract void printContent();
 }

@@ -54,50 +54,50 @@ public class LCDScreenTest {
 	}
 
 	@Test
-	public void testSetLCDScreen10Numbers() {
-		screen.setLCDScreen(new Grid[] {grid0, grid1, grid2, grid3,
+	public void testsetContent10Numbers() {
+		screen.setContent(new Grid[] {grid0, grid1, grid2, grid3,
 							grid4, grid5, grid6, grid7, grid8, grid9});
 		
 		Grid[] gridArray = new Grid[] {
 							grid0, grid1, grid2, grid3,grid4, 
 							grid5, grid6, grid7, grid8, grid9};
-		compareGridArrays(gridArray, screen.getLCDScreen());
+		compareGridArrays(gridArray, screen.getContent());
 	
-		screen.setLCDScreen(new Grid[] {grid1, grid1, grid2, grid2,
+		screen.setContent(new Grid[] {grid1, grid1, grid2, grid2,
 				grid3, grid3, grid4, grid4, grid5, grid5});
 
 		Grid[] gridArray2 = new Grid[] {
 			grid1, grid1, grid2, grid2, grid3,
 			grid3, grid4, grid4, grid5, grid5};
 		
-		compareGridArrays(gridArray2, screen.getLCDScreen());
+		compareGridArrays(gridArray2, screen.getContent());
 	}
 	
 	@Test
 	public void testSetLCDScreen3Numbers() {
-		screen.setLCDScreen(new Grid[] {grid9, grid1, grid0});
+		screen.setContent(new Grid[] {grid9, grid1, grid0});
 		Grid[] gridArray = new Grid[] {emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid,
 				emptyGrid, emptyGrid, grid9, grid1, grid0 };
 		
-		compareGridArrays(gridArray, screen.getLCDScreen());		
+		compareGridArrays(gridArray, screen.getContent());		
 	}
 	
 	@Test
 	public void testSetLCDScreen1Number() {
-		screen.setLCDScreen(new Grid[] {grid9});
+		screen.setContent(new Grid[] {grid9});
 		Grid[] gridArray = new Grid[] {emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid,
 				emptyGrid, emptyGrid, emptyGrid, emptyGrid, grid9 };
 		
-		compareGridArrays(gridArray, screen.getLCDScreen());	
+		compareGridArrays(gridArray, screen.getContent());	
 	}
 	
 	@Test
 	public void testSetLCDScreenEmpty() {
-		screen.setLCDScreen(new Grid[] {});
+		screen.setContent(new Grid[] {});
 		Grid[] gridArray = new Grid[] {emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid,
 				emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid};
 		
-		compareGridArrays(gridArray, screen.getLCDScreen());	
+		compareGridArrays(gridArray, screen.getContent());	
 	}
 
 }
