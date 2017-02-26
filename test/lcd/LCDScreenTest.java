@@ -42,49 +42,62 @@ public class LCDScreenTest {
 	@After
 	public void tearDown() throws Exception {
 	}
+	
+	// A helper to compare two arrays of arrays
+	private void compareGridArrays(Grid[] array1, Grid[] array2){
+		int i;
+		for(i = 0; i < array1.length; i++) {
+			assertArrayEquals(array1[i].getGridFirstLine(), array2[i].getGridFirstLine());
+			assertArrayEquals(array1[i].getGridSecondLine(), array2[i].getGridSecondLine());
+			assertArrayEquals(array1[i].getGridThirdLine(), array2[i].getGridThirdLine());
+		}
+	}
 
 	@Test
 	public void testSetLCDScreen10Numbers() {
 		screen.setLCDScreen(new Grid[] {grid0, grid1, grid2, grid3,
 							grid4, grid5, grid6, grid7, grid8, grid9});
 		
-		assertArrayEquals(screen.getLCDScreen(), new Grid[] {
+		Grid[] gridArray = new Grid[] {
 							grid0, grid1, grid2, grid3,grid4, 
-							grid5, grid6, grid7, grid8, grid9});
+							grid5, grid6, grid7, grid8, grid9};
+		compareGridArrays(gridArray, screen.getLCDScreen());
 	
 		screen.setLCDScreen(new Grid[] {grid1, grid1, grid2, grid2,
 				grid3, grid3, grid4, grid4, grid5, grid5});
 
-		assertArrayEquals(screen.getLCDScreen(), new Grid[] {
+		Grid[] gridArray2 = new Grid[] {
 			grid1, grid1, grid2, grid2, grid3,
-			grid3, grid4, grid4, grid5, grid5});
+			grid3, grid4, grid4, grid5, grid5};
+		
+		compareGridArrays(gridArray2, screen.getLCDScreen());
 	}
 	
 	@Test
 	public void testSetLCDScreen3Numbers() {
 		screen.setLCDScreen(new Grid[] {grid9, grid1, grid0});
+		Grid[] gridArray = new Grid[] {emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid,
+				emptyGrid, emptyGrid, grid9, grid1, grid0 };
 		
-		assertArrayEquals(screen.getLCDScreen(), new Grid[] {
-			emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid,
-			emptyGrid, emptyGrid, grid9, grid1, grid0 });
+		compareGridArrays(gridArray, screen.getLCDScreen());		
 	}
 	
 	@Test
 	public void testSetLCDScreen1Number() {
 		screen.setLCDScreen(new Grid[] {grid9});
+		Grid[] gridArray = new Grid[] {emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid,
+				emptyGrid, emptyGrid, emptyGrid, emptyGrid, grid9 };
 		
-		assertArrayEquals(screen.getLCDScreen(), new Grid[] {
-			emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid,
-			emptyGrid, emptyGrid, emptyGrid, emptyGrid, grid9});
+		compareGridArrays(gridArray, screen.getLCDScreen());	
 	}
 	
 	@Test
 	public void testSetLCDScreenEmpty() {
 		screen.setLCDScreen(new Grid[] {});
+		Grid[] gridArray = new Grid[] {emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid,
+				emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid};
 		
-		assertArrayEquals(screen.getLCDScreen(), new Grid[] {
-			emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid,
-			emptyGrid, emptyGrid, emptyGrid, emptyGrid, emptyGrid});
+		compareGridArrays(gridArray, screen.getLCDScreen());	
 	}
 
 }
