@@ -11,6 +11,10 @@ public enum Code {
 		this.code = code;
 	}
 	
+	public String getValue() {
+		return code;
+	}
+	
 }
 
 
