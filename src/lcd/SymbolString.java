@@ -3,42 +3,35 @@ package lcd;
 
 public class SymbolString {
 
-	private Symbol[] symbolstring;
+	private Symbol[] symbolString;
 	
-	public SymbolString(String symbolString) {
-		symbolstring = new Symbol[symbolString.length()];
+	public SymbolString(String string) {
+		symbolString = new Symbol[string.length()];
 
-	    for (int x = 0; x < symbolString.length(); x++) {
-	    	
-	    	switch (symbolString.charAt(x)) {
-	    		case '0':	symbolstring[x] = Symbol.ZERO;
-	    					break;
-	    		case '1':	symbolstring[x] = Symbol.ONE;
-							break;
-	    		case '2':	symbolstring[x] = Symbol.TWO;
-							break;
-	    		case '3':	symbolstring[x] = Symbol.THREE;
-							break;
-	    		case '4':	symbolstring[x] = Symbol.FOUR;
-							break;
-	    		case '5':	symbolstring[x] = Symbol.FIVE;
-							break;
-	    		case '6':	symbolstring[x] = Symbol.SIX;
-							break;
-	    		case '7':	symbolstring[x] = Symbol.SEVEN;
-							break;
-	    		case '8':	symbolstring[x] = Symbol.EIGHT;
-							break;
-	    		case '9':	symbolstring[x] = Symbol.NINE;
-							break;
-				default:	throw new IllegalArgumentException();
-	    	}
+	    for (int x = 0; x < string.length(); x++) {
+	    	symbolString[x] = charToSymbol(string.charAt(x));
 	    }
 	
 	}
 	
+	private Symbol charToSymbol(char c) {
+		switch (c) {
+			case '0':	return Symbol.ZERO;
+			case '1':	return Symbol.ONE;
+			case '2':	return Symbol.TWO;
+			case '3':	return Symbol.THREE;
+			case '4':	return Symbol.FOUR;
+			case '5':	return Symbol.FIVE;
+			case '6':	return Symbol.SIX;
+			case '7':	return Symbol.SEVEN;
+			case '8':	return Symbol.EIGHT;
+			case '9':	return Symbol.NINE;
+			default:	throw new IllegalArgumentException();
+		}
+	}
+	
 	public Symbol[] getSymbolString() {
-		return this.symbolstring;
+		return this.symbolString;
 	}
 
 }
