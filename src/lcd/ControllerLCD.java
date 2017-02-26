@@ -20,8 +20,9 @@ public class ControllerLCD {
 		
 		int i;
 		
-		// If the screen to print is to long for the screen, we only print the
-		// number of characters as the width of the screen
+		// If the string to print is too long for the screen, we only print the
+		// same number of characters as the width of the screen
+		// If an other behavior is required, we should raise an exception
 		for (i = 0; ((i < lengthString) && (i < screen.getWidth())) ; i ++) {
 			gridArray[i] = new Grid(symbolString.getSymbolString()[i]);
 		}
