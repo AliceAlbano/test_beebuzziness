@@ -10,7 +10,8 @@ public class ControllerLCD {
 		this.screen = new LCDScreen();
 	}
 	
-	//We test this method and the printLCDScreen method by black box testing
+	// If we want to test this method, we need to use black-box testing, as it is a
+	// void-returning function.
 	public void printSymbolString(SymbolString symbolString) {
 		
 		int lengthString = symbolString.getSymbolString().length;
